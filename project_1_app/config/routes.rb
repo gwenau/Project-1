@@ -10,7 +10,7 @@ Project1App::Application.routes.draw do
   get "/login", to: "sessions#destroy", as: :logout
 
   # This might cause problems down the path but just makes a bit more sense for now.
-  get "/artists", to: "users#index"
+  # get "/artists", to: "users#index"
 
   resources :sessions, only: [:new, :create, :destroy]
 
