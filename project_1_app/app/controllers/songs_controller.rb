@@ -14,7 +14,7 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.create(params[:song])
-    # Possibly a redirection here.
+    redirect_to(song)
   end
 
   def edit
@@ -24,11 +24,13 @@ class SongsController < ApplicationController
   def update
     song = Song.find(params[:id])
     song.update_attributes(params[:song])
+    redirect_to(song)
   end
 
   def destroy
     song = Song.find(params[:id])
     song.delete
+    redirect_to(songs_path)
   end
 
 end
