@@ -19,17 +19,26 @@
       <li><a href="/signup">Sign up</a></li>
     </ul>
   </nav>  
-  <% if current_user %>
-    <p> hello, <%= current_user.email %> </p>
-    <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %>
-  <% else %>
-    <%= link_to 'Please login', login_path %>
-    <%= link_to 'Sign up', signup_path %>
-  <% end %>
-  <div id="warning">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <br>
+  <br>
+  <div class="session_acknowledgement">
+    <ul id="session-acknowledgement">
+    <% if current_user %>
+      <li>Hello, <%= current_user.user_name %></li>
+      <li>
+      <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
+    <% else %>
+      <li><%= link_to 'Please login', login_path %></li>
+      <li><%= link_to 'Sign up', signup_path %></li>
     <% end %>
+    <li>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+    </li>
+    </ul>
+  
+  </div>
 <%= yield %>
 
 </body>

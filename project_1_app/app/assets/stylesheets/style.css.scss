@@ -46,6 +46,20 @@ nav ul li {
   margin-right: 1px;
 }
 
+.session_acknowledgement {
+  width: 100%;
+}
+
+ul#session-acknowledgement li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px 0;
+  width: auto;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-padding-start: 0px;
+}
+
 .warning {
   color: black;
   margin-left: 40px;
@@ -59,9 +73,16 @@ h2 {
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 50px;
   margin-left: 40px;
   /*margin-top: 40px; Doesn't seem to do anything. */
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+
+p {
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
 }
 
 .home {
@@ -111,5 +132,9 @@ aside {
 }
 
 .login_form {
+  margin-left: 40px;
+}
+
+.session_acknowledgement {
   margin-left: 40px;
 }
