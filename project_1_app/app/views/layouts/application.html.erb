@@ -18,10 +18,18 @@
       <li><a href="/login">Login<a></li>
       <li><a href="/signup">Sign up</a></li>
     </ul>
-  </nav>
-  
-
-
+  </nav>  
+  <% if current_user %>
+    <p> hello, <%= current_user.email %> </p>
+    <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %>
+  <% else %>
+    <%= link_to 'Please login', login_path %>
+    <%= link_to 'Sign up', signup_path %>
+  <% end %>
+  <div id="warning">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
 <%= yield %>
 
 </body>
