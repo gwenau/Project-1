@@ -10,11 +10,11 @@ User.delete_all
 Song.delete_all
 Comment.delete_all
 
-u1 = User.create(user_name: "Michael Hutchinson", email: "micheal_hutchinson@gmail.com", bio: "New to Under Ground Music, just checking out the scene.")
+u1 = User.create(user_name: "Michael Hutchinson", email: "micheal_hutchinson@gmail.com", bio: "New to Under Ground Music, just checking out the scene.", role: "artist")
 
-u2 = User.create(user_name: "Sarah Marshall", email: "sara_marshall@hotmail.com", bio: "I heard this place was good. So I'll give it a try")
+u2 = User.create(user_name: "Sarah Marshall", email: "sara_marshall@hotmail.com", bio: "I heard this place was good. So I'll give it a try", role: "artist")
 
-u3 = User.create(user_name: "Amy Adams", email: "amy_adams@yahoo.com", bio: "I'm a singer and I want the world to hear me.")
+u3 = User.create(user_name: "Amy Adams", email: "amy_adams@yahoo.com", bio: "I'm a singer and I want the world to hear me.", role: "artist")
 
 u4 = User.create(user_name: "Listener 1", email: "roberto_jackson@hotmail.com")
 
@@ -22,7 +22,7 @@ u5 = User.create(user_name: "Listener 2", email: "jessie_jay@hotmail.com")
 
 u6 = User.create(user_name: "Listener 3", email: "ronald_reggae@hotmail.com")
 
-u7 = User.create(user_name: "Moderator today", email: "moderator@undergroundmusic.com")
+u7 = User.create(user_name: "Moderator today", email: "moderator@undergroundmusic.com", role: "moderator" )
 
 s1 = Song.create(song_name: "Video Video", song_file: "s1 song file", user_id: 1)
 

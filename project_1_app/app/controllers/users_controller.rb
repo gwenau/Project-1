@@ -17,7 +17,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(params[:user])
-    redirect_to(user) # Find out more if you can
+    if @user.save
+      redirect_to(user) # Consider redirecting to a different route.
+    else
+      render 'new'
+    end
   end
 
   def edit
