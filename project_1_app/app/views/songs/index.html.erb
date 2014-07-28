@@ -1,6 +1,4 @@
 <h3><%= "List of Songs" %></h3>
-<br>
-<br>
 
 <div class="home">
   <% @songs.each do |song| %>
@@ -10,6 +8,8 @@
   <%= song.song_image %>
   <br>
   <%= song.song_file %>
+  <br>
+  <%= link_to 'Show', song %>
   <br>
   <br>
   <% end %>
