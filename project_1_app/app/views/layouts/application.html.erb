@@ -25,8 +25,8 @@
     <ul id="session-acknowledgement">
     <% if current_user %>
       <li>Hello, <%= current_user.user_name %></li>
-      <li>
-      <%= link_to 'Logout', logout_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
+      <!-- The session path had to have an argument passing through it. Otherwise, it does not know what to destroy -->
+      <li><%= link_to 'Logout', session_path(current_user), method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% else %>
       <li><%= link_to 'Please login', login_path %></li>
       <li><%= link_to 'Sign up', signup_path %></li>

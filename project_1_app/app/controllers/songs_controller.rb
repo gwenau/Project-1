@@ -1,5 +1,7 @@
 class SongsController < ApplicationController
 
+  before_filter :authenticate, only: [:edit, :destroy]
+
   def index
     @songs = Song.all
   end

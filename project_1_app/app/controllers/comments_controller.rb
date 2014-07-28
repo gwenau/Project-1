@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
 
+  before_filter :authenticate, only: [:create, :edit, :destroy]
+
   def index
     @comments = Comment.all
   end

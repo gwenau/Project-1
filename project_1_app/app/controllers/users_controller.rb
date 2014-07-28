@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :authenticate, only: [:edit, :destroy]
+
   def index
     @users = User.all
   end
