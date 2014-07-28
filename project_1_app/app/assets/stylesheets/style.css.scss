@@ -60,6 +60,10 @@ ul#session-acknowledgement li {
   -webkit-padding-start: 0px;
 }
 
+ul#session-acknowledgement li#warning {
+  color: red;
+}
+
 .warning {
   color: black;
   margin-left: 40px;
