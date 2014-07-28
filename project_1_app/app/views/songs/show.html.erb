@@ -18,6 +18,10 @@
     <!-- Now have to find a way to make the user name show up. -->
       <%= comment.user_id %>
       <%= comment.comment_content %><br>
+      <%= link_to 'Show', comment %>
+      <%= link_to 'Edit', edit_comment_path %>
+      <%= link_to 'Destroy', comment, method: :delete, data: {confirm: 'Are you sure?' } %>
+      <br>
     <% end %>
   </p>
 <div>
