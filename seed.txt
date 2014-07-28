@@ -1,0 +1,42 @@
+# User.delete_all
+# Song.delete_all
+# Comment.delete_all
+
+u1 = User.create(user_name: "Michael Hutchinson", email: "micheal_hutchinson@gmail.com", bio: "New to Under Ground Music, just checking out the scene.")
+
+u2 = User.create(user_name: "Sarah Marshall", email: "sara_marshall@hotmail.com", bio: "I heard this place was good. So I'll give it a try")
+
+u3 = User.create(user_name: "Amy Adams", email: "amy_adams@yahoo.com", bio: "I'm a singer and I want the world to hear me.")
+
+u4 = User.create(user_name: "Listener today", email: "roberto_jackson@hotmail.com")
+
+u5 = User.create(user_name: "Moderator today", email: "moderator@undergroundmusic.com")
+
+s1 = Song.create(song_name: "Video Video", song_file: "s1 song file", user_id: 1)
+
+s2 = Song.create(song_name: "Phone Phone", song_file: "s2 song file", user_id: 2)
+
+s3 = Song.create(song_name: "Chip Munk", song_file: "s3 song file", user_id: 3)
+
+s4 = Song.create(song_name: "Lonely Heart", song_file: "s4 song file", user_id: 3)
+
+s5 = Song.create(song_name: "Happy Heart", song_file: "s5 song file", user_id: 3)
+
+c1 = Comment.create(comment_content: "This is crap", song_id: 1, user_id: 4)
+
+c2 = Comment.create(comment_content: "This is very good", song_id: 2, user_id: 4)
+
+c3 = Comment.create(comment_content: "Could be better", song_id: 1)
+
+c4 = Comment.create(comment_content: "Could be worst LOL", song_id: 2)
+
+# Put into the use I'd and it worked fine.
+# u1 << s1
+# u2 << s2
+# u3 << [s3, s4, s5]
+
+# Put into the song id and it worked fine.
+# s1 << c1
+# s2 << c2
+# s1 << c3
+# s2 << c4

@@ -1,0 +1,9 @@
+<%= "Comments" %>
+<br>
+<br>
+
+<% @comments.each do |comment| %>
+<%#= user_id and song_id are ndefined local variables at the moment. %>
+<%= comment.comment_content %>
+<br>
+<% end %> 

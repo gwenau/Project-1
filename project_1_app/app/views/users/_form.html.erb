@@ -1,0 +1,22 @@
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p> 
+    <%= f.label :profile_pic %>
+    <%= f.file_field :profile_pic %>
+  </p>
+
+  <p>
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </p>
+  <%= f.submit %>
+<% end %>
+
+<!-- Need to have the styles here for the user to choose -->

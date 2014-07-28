@@ -1,0 +1,38 @@
+<h2><%= @user.user_name %></h2>
+
+<div class="container">
+  
+  <main>
+    <p>
+      <br>
+      <%= @user.email %>
+      <br>
+      <%= @user.bio %>
+      <br>
+    </p>
+    <p>
+      <strong>Songs:</strong><br>
+      <% @user.songs.each do |song| %>
+        <%= song.song_name %><br>
+        <%= song.song_file %><br>
+      <%  end %>
+    </p>
+  </main>
+  
+  <aside>
+      <%= @user.profile_pic %>
+      <br>
+  </aside>
+  
+</div>
+
+<!-- Need to add the coments for the songs here somehow. Where comment matches the songs that are playing. But taken out now because it will not need to be implemented until JavaScript comes along. -->
+<!-- <div class="bottom">
+  <p>
+    <strong>Comments:</strong><br>
+    <% @song.comments.each do |comment| %>
+      <%= comment.user_id %>
+      <%= comment.comment_content %><br>
+    <% end %>
+  </p>
+</div> -->

@@ -1,0 +1,32 @@
+<!-- Instead of render form here, I've decided to make this the login page instead -->
+<%#= render 'form' %>
+
+<h3>Sign Up</h3>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <!-- "error_messages" might be a Ruby thing -->
+      <div class="error_messages">
+        <h2>Form is invalid</h2>
+        <ul>
+          <% for message in @user.errors.full_messages %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+<div class="login_form"
+    <%= f.label :email %>
+    <%= f.text_field  :email %>
+    <br>
+    <%= f.label :password %>
+    <!-- Notice here that the syntax is 'password_field' -->
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <br>
+    <br>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<h3><%= "Artists" %></h3>
+
+<!-- Change back to old model because this is actually the user's page.-->
+
+<div class="home">
+  <% @users.each do |user| %>
+      <%= user.user_name %>
+      <br>
+      <%= user.email %>
+      <br>
+      <%= user.profile_pic %>
+      <br>
+      <%= user.bio %>
+      <br>
+      <br>
+  <% end %>
+</div>

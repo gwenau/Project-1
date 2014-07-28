@@ -1,0 +1,110 @@
+/*
+font-family: 'Walter Turncoat', cursive;
+font-family: 'The Girl Next Door', cursive;
+font-family: 'Rock Salt', cursive;
+font-family: 'Codystar', cursive;
+*/
+
+/* to define the total width of the object*/
+* { box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: white;
+} 
+
+a:hover {
+  color: yellow;
+}
+
+body {
+ /* background: url('underground_background.jpg');*/
+  background-size: cover;
+  font-family: 'Walter Turncoat', cursive;
+}
+
+header {
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 100px;
+ /* color: white;*/
+  text-align: center;
+  /* background: blue;
+  I need to get a beautiful blue color. Look at the website with the colour schemes */
+}
+
+nav ul li {
+  list-style-type: none;
+  text-align: center;
+  font-family: 'Walter Turncoat', cursive;
+  font-size: 25px;
+  float: left;
+  width: 19%;
+  display: block;
+  color: white;
+  background: black;
+  padding: 10px 0;
+  margin-right: 1px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 65px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  font-size: 40px;
+  margin-left: 40px;
+  /*margin-top: 40px; Doesn't seem to do anything. */
+}
+
+.home {
+  margin-top: 0px;
+  margin-left: 40px;
+  margin-right: 50px;
+  /* Need to change to a more sophiscated colour here also */
+  background-color: grey;
+  opacity: 0.6;
+}
+
+.container {
+  color: black;
+  width: 800px;
+  /* Could be better written */
+  margin-left: 150px;
+  /* Find a better colour perhaps using the colour scheme */
+  background: grey;
+  /* The problem with opacity here is that it applies to both the text and the background color */
+  opacity: 0.6;
+}
+
+main {
+  width: 390px;
+  height: 500px;
+  float: left;
+  background-color: grey;
+}
+
+aside {
+  width: 400px;
+  height: 500px;
+  float: left;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  background-color: grey;
+}
+
+.bottom {
+  clear: both;
+  width: 795px;
+  margin-left: 150px;
+ /* margin-top: 5px; Doesn't seem to work*/
+  /* Need a better colour */
+  background-color: grey;
+  opacity: 0.6;
+}
+
+.login_form {
+  margin-left: 40px;
+}

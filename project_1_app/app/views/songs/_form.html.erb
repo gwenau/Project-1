@@ -1,0 +1,21 @@
+<!-- I have to put, = form_for, for it to show -->
+<%= form_for @song do |f| %>
+<!-- I've left out the error messages part here for now -->
+  <p>
+    <%= f.label :song_name %><br>
+    <%= f.text_field :song_name %>
+  </p>
+  <p>
+    <%= f.label :song_image %><br>
+    <%= f.file_field :song_image %>
+  </p>
+  <p>
+    <%= f.label :song_file %><br>
+    <%= f.file_field :song_file %>
+  </p>
+  <p>
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </p>
+  <%= f.submit %>
+<% end %>

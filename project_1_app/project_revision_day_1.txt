@@ -1,0 +1,3 @@
+* Add field style to user
+* Take out comments from artist page 
+* In User/Edit, needs field to edit style, and file upload form to add new song
