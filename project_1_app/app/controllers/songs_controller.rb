@@ -9,6 +9,7 @@ class SongsController < ApplicationController
   def show
     @song = Song.find(params[:id])
     @comment = Comment.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def new

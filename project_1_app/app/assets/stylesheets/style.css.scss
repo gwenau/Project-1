@@ -143,8 +143,55 @@ aside {
   margin-left: 40px;
 }
 
-/* Example of customisation */
-.user_red>main {
+/* Example of customisation. So it appears that a style can belong to mulitple classes. */
+/* A very specific example but it also looks like you need it for the specific area too. => .user_background_red>main {
   background: red;
-  color: yellow;
+}*/
+
+.user_background_red>main {
+  background: red;
+}
+
+.user_background_green>main {
+  background: green;
+}
+
+.user_background_grey>main {
+  background: gray;
+}
+
+.user_background_black>main {
+  background: black;
+}
+
+.user_background_white>main {
+  background: white;
+}
+
+.user_background_blue>main {
+  background: blue;
+}
+
+.user_background_red>aside {
+  background: red;
+}
+
+.user_background_green>aside {
+  background: green;
+}
+
+.user_background_grey>aside {
+  background: gray;
+}
+
+.user_background_black>aside {
+  background: black;
+}
+
+.user_background_white>aside {
+  background: white;
+}
+
+.user_background_blue>aside {
+  background: blue;
 }
