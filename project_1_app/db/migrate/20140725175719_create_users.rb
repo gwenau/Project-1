@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_digest
       t.string :role
-      t.string :profile_pic
+      t.string :image
       t.text :bio
       t.string :user_background_style
       t.string :user_font_style

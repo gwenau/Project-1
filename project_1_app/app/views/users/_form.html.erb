@@ -8,24 +8,26 @@
     <%= f.text_field :email %>
   </p>
   <p> 
-    <%= f.label :profile_pic %>
-    <%= f.file_field :profile_pic %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
   </p>
   <p>
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </p>
+  <!-- I might be able to make a custom one here. -->
   <p>
     <%= f.label :user_background_style %>
-    <%= f.text_field :user_background_style %>
+    <%= f.select :user_background_style, options_for_select([:red, :green, :gray, :black, :white, :blue]) %>
   </p>
+  <!-- This is all the font style I have at the moment -->
   <p>
     <%= f.label :user_font_style %>
-    <%= f.text_field  :user_font_style %>
+    <%= f.select  :user_font_style, options_for_select(['Walter Turncoat', 'The Girl Next Door', 'Rock Salt', 'Codystar']) %>
   </p>
   <p>
     <%= f.label :user_font_color_style %>
-    <%= f.text_field  :user_font_color_style %>
+    <%= f.select  :user_font_color_style, options_for_select([:red, :green, :gray, :black, :white, :blue]) %>
   </p>
   <%= f.submit %>
 <% end %>

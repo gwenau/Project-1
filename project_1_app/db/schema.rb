@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20140725175953) do
 
   create_table "songs", :force => true do |t|
     t.string   "song_name"
-    t.string   "song_image"
+    t.string   "image"
     t.string   "song_file"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20140725175953) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "role"
-    t.string   "profile_pic"
+    t.string   "image"
     t.text     "bio"
     t.string   "user_background_style"
     t.string   "user_font_style"

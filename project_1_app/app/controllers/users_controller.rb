@@ -34,7 +34,7 @@ class UsersController < ApplicationController
     # Check if it needs to be an instance variable here. Left as local variable because the scope might not matter.
     user = User.find(params[:id])
     user.update_attributes(params[:user])
-    redirect_to(user) # Find out more if you can
+    redirect_to(user) # Find out more if you can. You can also have if statement that returns a successful message.
   end
 
   def destroy
