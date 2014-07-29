@@ -27,6 +27,13 @@ class Ability
       can :delete, Comment do |comment|
             comment.try(:user) == user
           end
+      can :create, User
+      can :update, User do |user|
+            user.try(:user) == user
+          end
+      can :delete, User do |user|
+            user.try(:user) == user
+          end 
     end
   end
 end

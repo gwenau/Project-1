@@ -9,11 +9,13 @@
   <br>
   <%= song.song_file %>
   <br>
-  <%= link_to 'Show', song %> |
-  <% if can? :update, @song %>
+  <%= link_to 'Show', song %>
+  <% if can? :update, Song %>
     <%= link_to 'Edit', edit_song_path(song) %> 
-  <% end %>  |
-  <%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <% if can? :delete, Song %>
+    <%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
   <br>
   <br>
   <% end %>

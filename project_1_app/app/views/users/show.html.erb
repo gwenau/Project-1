@@ -15,9 +15,13 @@
       <% @user.songs.each do |song| %>
         <%= song.song_name %><br>
         <%= song.song_file %><br>
-        <%= link_to 'Show', song %> |
-        <%= link_to 'Edit', edit_song_path %> |
-        <%= link_to 'Destroy', song, method: :end, data: { confirm: 'Are you sure?'} %>
+        <%= link_to 'Show', song %>
+        <% if can? :update, Song %>
+          <%= link_to 'Edit', edit_song_path %>
+        <% end %>
+        <% if can? :delete, Song %>
+          <%= link_to 'Destroy', song, method: :end, data: { confirm: 'Are you sure?'} %>
+        <% end %>
         <br>
       <%  end %>
     </p>
