@@ -10,8 +10,10 @@
       <br>
       <%= user.bio %>
       <br>
-      <%= link_to 'Show', user %>
-      <%= link_to 'Edit', edit_user_path(user) %>
+      <%= link_to 'Show', user %> |
+      <%# if can? :update @user (can not get this syntax to work) %>
+        <%= link_to 'Edit', edit_user_path(user) %> 
+      <%# end %> |
       <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
       <br>
       <br>

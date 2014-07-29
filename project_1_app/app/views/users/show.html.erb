@@ -1,6 +1,6 @@
 <h2><%= @user.user_name %></h2>
 
-<div class="container">
+<div class="container user_<%= @user.user_background_style %>">
   
   <main>
     <p>
@@ -15,8 +15,8 @@
       <% @user.songs.each do |song| %>
         <%= song.song_name %><br>
         <%= song.song_file %><br>
-        <%= link_to 'Show', song %>
-        <%= link_to 'Edit', edit_song_path %>
+        <%= link_to 'Show', song %> |
+        <%= link_to 'Edit', edit_song_path %> |
         <%= link_to 'Destroy', song, method: :end, data: { confirm: 'Are you sure?'} %>
         <br>
       <%  end %>

@@ -142,3 +142,9 @@ aside {
 .session_acknowledgement {
   margin-left: 40px;
 }
+
+/* Example of customisation */
+.user_red>main {
+  background: red;
+  color: yellow;
+}
