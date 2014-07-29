@@ -3,13 +3,13 @@
 <div class="container user_background_<%= @user.user_background_style %>">
 
   <main>
-    <p><%= @song.image %></p>
+    <p><%= image_tag @song.image %></p>
   </main>
   <aside>
     <p><%= @song.song_file %></p>
     <audio controls>
-      <source src="horse.ogg" type="audio/ogg">
-      <source src="horse.mp3" type="audio/mpeg">
+      <source src="<%= @song.song_file %>" type="audio/ogg">
+      <source src="<%= @song.song_file %>" type="audio/mpeg">
     </audio>
   </aside>
 

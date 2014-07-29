@@ -1,15 +1,23 @@
 <h3><%= "List of Songs" %></h3>
-  
+
+<div class="search">
+    <%#= search_form_for @q do |f| %>
+      <%#= f.label :song_name_cont, 'Search for Song' %>
+      <%#= f.text_field :song_name_cont %>
+      <%#= f.submit %>
+    <%# end %>
+  </div>
+
 <div class="home">
   <% @songs.each do |song| %>
   <%#= user_id. Undefined local variable at the moment. %>
   <%= song.song_name %>
   <br>
-  <%= song.image %>
+  <%= image_tag song.image.thumb %>
   <br>
-  <%= song.song_file %>
+  <%#= song.song_file %>
   <br>
-  <%= link_to 'Show', song %>
+  <%= link_to 'Listen', song %>
   <% if can? :update, Song %>
     <%= link_to 'Edit', edit_song_path(song) %> 
   <% end %>

@@ -14,6 +14,7 @@
       <strong>Songs:</strong><br>
       <% @user.songs.each do |song| %>
         <%= song.song_name %><br>
+        <%= image_tag song.image.thumb %>
         <%= song.song_file %><br>
         <%= link_to 'Show', song %>
         <% if can? :update, Song %>
@@ -25,14 +26,16 @@
         <br>
       <%  end %>
     </p>
-    <audio controls>
+<!-- Just a bit too complicated for now. In future, I would have probably played the artist's most popular song 
+  <audio controls>
       <source src="horse.ogg" type="audio/ogg">
       <source src="horse.mp3" type="audio/mpeg">
-    </audio>
+    </audio> 
+-->
   </main>
   
   <aside>
-      <%= @user.image %>
+      <%= image_tag @user.image %>
       <br>
   </aside>
   

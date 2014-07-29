@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   before_filter :authenticate, only: [:edit, :destroy]
 
+    # @q = User.search(params[:q])
+    # @user = @q.result
+
   def index
     @users = User.all
   end

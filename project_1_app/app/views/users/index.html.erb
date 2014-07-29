@@ -1,12 +1,22 @@
 <h3><%= "Artists" %></h3>
 
+<div class="search">
+    <% #= search_form_for @q do |f| %>
+      <%#= f.label :user_name_cont, 'Search for artist' %>
+      <%#= f.text_field :user_name_cont %>
+      <%#= f.label :song_song_name_cont, 'Search for Song' %>
+      <%#= f.text_field :song_song_name_cont (can not get this to work for now.) %>
+      <%#= f.submit %>
+    <%# end %> 
+  </div>
+
 <div class="home">
   <% @users.each do |user| %>
       <%= user.user_name %>
       <br>
       <%= user.email %>
       <br>
-      <%= user.image %>
+      <%= image_tag user.image.thumb %>
       <br>
       <%= user.bio %>
       <br>

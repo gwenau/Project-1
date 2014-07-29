@@ -4,6 +4,8 @@ class SongsController < ApplicationController
 
   def index
     @songs = Song.all
+    #@q = Song.search(params[:q])
+    #@song = @q.result
   end
 
   def show
@@ -18,7 +20,7 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.create(params[:song])
-    redirect_to(song)
+    redirect_to song_path(@song)
   end
 
   def edit
@@ -26,9 +28,11 @@ class SongsController < ApplicationController
   end
 
   def update
+   #binding.pry
     song = Song.find(params[:id])
     song.update_attributes(params[:song])
-    redirect_to(song)
+    redirect_to song_path(song)
+
   end
 
   def destroy

@@ -2,20 +2,21 @@
 <%#= render 'form' %>
 
 <h3>Sign Up</h3>
-  <%= form_for @user do |f| %>
-    <% if @user.errors.any? %>
-      <!-- "error_messages" might be a Ruby thing -->
-      <div class="error_messages">
-        <h2>Form is invalid</h2>
-        <ul>
-          <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-<div class="login_form"
+    <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <!-- "error_messages" might be a Ruby thing -->
+        <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+<div class="home"
     <%= f.label :email %>
     <%= f.text_field  :email %>
     <br>
