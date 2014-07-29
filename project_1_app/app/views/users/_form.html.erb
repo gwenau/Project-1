@@ -15,15 +15,9 @@
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </p>
-  <!-- I might be able to make a custom one here. -->
   <p>
     <%= f.label :user_background_style %>
     <%= f.select :user_background_style, options_for_select([:red, :green, :grey, :black, :white, :blue]) %>
-  </p>
-  <!-- This is all the font style I have at the moment -->
-  <p>
-    <%= f.label :user_font_style %>
-    <%= f.select  :user_font_style, options_for_select(['Walter Turncoat', 'The Girl Next Door', 'Rock Salt', 'Codystar']) %>
   </p>
   <p>
     <%= f.label :user_font_color_style %>
@@ -31,5 +25,3 @@
   </p>
   <%= f.submit %>
 <% end %>
-
-<!-- Need to have the styles here for the user to choose -->

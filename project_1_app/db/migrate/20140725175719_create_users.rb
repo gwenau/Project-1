@@ -8,7 +8,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :image
       t.text :bio
       t.string :user_background_style
-      t.string :user_font_style
       t.string :user_font_color_style
 
       t.timestamps
