@@ -11,10 +11,21 @@
     <%= f.label :profile_pic %>
     <%= f.file_field :profile_pic %>
   </p>
-
   <p>
     <%= f.label :bio %>
     <%= f.text_area :bio %>
+  </p>
+  <p>
+    <%= f.label :user_background_style %>
+    <%= f.text_field :user_background_style %>
+  </p>
+  <p>
+    <%= f.label :user_font_style %>
+    <%= f.text_field  :user_font_style %>
+  </p>
+  <p>
+    <%= f.label :user_font_color_style %>
+    <%= f.text_field  :user_font_color_style %>
   </p>
   <%= f.submit %>
 <% end %>
