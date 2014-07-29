@@ -1,7 +1,10 @@
 <%= form_for @comment do |f| %>
   <p>
     <%= f.label :comment_content %>
-    <%= f.text_field :comment_content %>
+    <%= f.text_area :comment_content %>
+    <br>
+    <%= f.label :song_id %>
+    <%= f.text_field :song_id %>
   </p>
   <%= f.submit %>
 <% end %>
