@@ -1,11 +1,16 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :ransack_search
+  before_filter :ransack_search_artist
+  before_filter :ransack_search_song
 
-
-  def ransack_search
+  def ransack_search_artist
     @q = User.search(params[:q])
     @users = @q.result
+  end
+
+  def ransack_search_song
+    @s = Song.search(params[:q])
+    @songs = @s.result
   end
 
   helper_method :current_user

@@ -23,8 +23,11 @@
     <%= search_form_for @q do |f| %>
       <%= f.label :user_name_cont, 'Search for artist' %>
       <%= f.text_field :user_name_cont %>
-      <%#= f.label :song_song_name_cont, 'Search for Song' %>
-      <%#= f.text_field :song_song_name_cont %>
+      <%= f.submit %>
+    <% end %>
+    <%= search_form_for @s do |f| %>
+      <%= f.label :song_name_cont, 'Search for Song' %>
+      <%= f.text_field :song_name_cont %>
       <%= f.submit %>
     <% end %>
   </div>

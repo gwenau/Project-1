@@ -3,9 +3,9 @@ class SongsController < ApplicationController
   before_filter :authenticate, only: [:edit, :destroy]
 
   def index
-    @songs = Song.all
-    #@q = Song.search(params[:q])
-    #@song = @q.result
+    #@songs = Song.all
+    # @q = Song.search(params[:q])
+    # @song = @q.result
   end
 
   def show
