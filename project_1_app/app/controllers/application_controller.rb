@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  # To beable to bring up the search and associated models results.
   before_filter :ransack_search
 
   def ransack_search

@@ -16,6 +16,10 @@ class Ability
       can :delete, Comment do |comment| # When it relates to their own song or their own comment.
             comment.try(:user) == user # I feel like an || should be use here for the other condition.
             end
+      can [:update, :delete], User do |user_ability|
+        user_ability.id == user.id
+      end
+
     elsif user.role? :moderator
       can :delete, Comment
     else 
@@ -28,12 +32,12 @@ class Ability
             comment.try(:user) == user
           end
       can :create, User
-      can :update, User do |user|
-            user.try(:user) == user
-          end
-      can :delete, User do |user|
-            user.try(:user) == user
-          end 
+      can :update, User do |user_ability|
+        user.id == user_ability.id
+      end
+      can :delete, User do |user_ability|
+        user.id == user_ability.id
+      end 
     end
   end
 end
