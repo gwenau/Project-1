@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def destroy
     comment = Comment.find(params[:id])
     comment.delete
-    redirect_to(comments_path)
+    redirect_to song_path(comment.song)
   end
 
 end

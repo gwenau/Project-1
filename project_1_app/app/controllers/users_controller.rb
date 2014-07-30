@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def show  
     @user = User.find(params[:id])
     # To be able to access the comments, I had to initiate the instance variable here.
-    @song = Song.find(params[:id])   
+    # @song = Song.find(params[:id])   
   end
 
 

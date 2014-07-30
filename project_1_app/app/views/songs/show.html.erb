@@ -1,6 +1,6 @@
 <h2><%= @song.song_name %></h2>
 
-<div class="container user_background_<%= @user.user_background_style %>">
+<div class="container user_background_<%= @song.user.user_background_style %>">
 
   <main>
     <p><%= image_tag @song.image %></p>

@@ -34,11 +34,8 @@ class Ability
     else 
       can :read, :all
       can :create, Comment  
-      can :update, Comment do |comment|
+      can [:update, :delete], Comment do |comment|
             comment.try(:user) == user 
-          end
-      can :delete, Comment do |comment|
-            comment.try(:user) == user
           end
       can :create, User
       can :update, User do |user_ability|
