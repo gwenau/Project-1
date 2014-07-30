@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(params[:comment])
-    redirect_to(@comment) # Find out more if you can
+    redirect_to song_path(@comment.song.id)
   end
 
   def edit
