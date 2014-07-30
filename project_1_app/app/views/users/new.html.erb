@@ -30,6 +30,8 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
     <br>
+    <%= f.label :role %>
+    <%= f.select :role, options_for_select([:artist, :other]) %>
     <br>
     <%= f.submit %>
   <% end %>

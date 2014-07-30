@@ -7,15 +7,21 @@ class Ability
 
     if user.role? :admin
       can :manage, :all
+      can :create, User
     elsif user.role? :moderator
       can :read, :all
+      can :create, User
+      can :update, User do |user_ability|
+        user_ability.id == user.id
+      end
       can :create, Comment 
-      can :delete, Comment do |comment| 
-            comment.user.id == user.id
+      can :update, Comment do |comment| 
+            comment.user == user
           end
       can :delete, Comment
     elsif user.role? :artist
       can :read, :all
+      can :create, User
       can :update, User do |user_ability|
         user_ability.id == user.id
       end
@@ -29,21 +35,16 @@ class Ability
             end
       can :create, Comment 
       can :delete, Comment do |comment| 
-            comment.try(:user) == user 
+            # comment.user.id == user.id
+            comment.song.user.id = user.id
           end
     else 
       can :read, :all
       can :create, Comment  
       can [:update, :delete], Comment do |comment|
-            comment.try(:user) == user 
+        # I just want to get this part working.
+            comment.try(:user) == user
           end
-      can :create, User
-      can :update, User do |user_ability|
-        user.id == user_ability.id
-      end
-      can :delete, User do |user_ability|
-        user.id == user_ability.id
-      end 
     end
   end
 end

@@ -9,8 +9,11 @@ class UsersController < ApplicationController
 
   def index
     @q = User.search(params[:q])
-    @users = @q.result # The variable had to be the plural for this to work.
+    #@users = @q.result # The variable had to be the plural for this to work.
     # @users = User.all
+    @artists = @q.result.select do |artist|
+      artist.role == "artist"
+    end
   end
 
   def show  

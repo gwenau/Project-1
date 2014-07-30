@@ -1,7 +1,7 @@
 <h3><%= "Artists" %></h3>
 
 <div class="home">
-  <% @users.each do |user| %>
+  <% @artists.each do |user| %>
       <%= user.user_name %>
       <br>
       <%= user.email %>
@@ -9,6 +9,8 @@
       <%= image_tag user.image.thumb %>
       <br>
       <%= user.bio %>
+      <br>
+
       <br>
       <%= link_to 'Show', user %>
         <% if can? :edit, user %>
