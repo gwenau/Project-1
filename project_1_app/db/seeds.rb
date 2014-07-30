@@ -46,4 +46,6 @@ s6 = Song.create(song_name: "Additional Anthem", song_file: "s6 song file", user
 
 c5 = Comment.create(comment_content: "Seeing what comes up to make sure it's OK", song_id: 6, user_id: 7)
 
+u8 = User.create(user_name: "Admin", email: "admin@admin.com", bio: "Keeping things under control", role: "admin", password: "password")
+
 # Because I had the authentication in. Each user now required a password even though I had not set any validations yet.

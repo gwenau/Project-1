@@ -5,22 +5,31 @@ class Ability
   def initialize(user)
     user ||= User.new # Guest account if the user does not have an account.
 
-    if user.role? :artist
+    if user.role? :admin
+      can :manage, :all
+    elsif user.role? :artist
+      can :read, :all
+      can :update, User do |user_ability|
+        user_ability.id == user.id
+      end
       can :create, Song
       can :update, Song do |song|
-            song.try(:user_id) == current_user.id # Ryan Bates does not have id here.
+            song.user.id == user.id 
             end
+      # This seems to be working as well.
       can :delete, Song do |song|
             song.try(:user) == user
             end
-      can :delete, Comment do |comment| # When it relates to their own song or their own comment.
-            comment.try(:user) == user # I feel like an || should be use here for the other condition.
-            end
-      can [:update, :delete], User do |user_ability|
-        user_ability.id == user.id
-      end
-
+      can :create, Comment 
+      can :delete, Comment do |comment| 
+            comment.try(:user) == user 
+          end
     elsif user.role? :moderator
+      can :read, :all
+      can :create, Comment 
+      can :delete, Comment do |comment| 
+            comment.user.id == user.id
+          end
       can :delete, Comment
     else 
       can :read, :all

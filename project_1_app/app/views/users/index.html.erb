@@ -11,7 +11,7 @@
       <%= user.bio %>
       <br>
       <%= link_to 'Show', user %>
-        <% if can? :edit, user%>
+        <% if can? :edit, user %>
           <%= link_to 'Edit', edit_user_path(user) %> 
         <% end %>
         <% if can? :delete, user%>

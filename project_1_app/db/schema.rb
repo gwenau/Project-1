@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20140725175953) do
     t.string   "image"
     t.text     "bio"
     t.string   "user_background_style"
-    t.string   "user_font_style"
     t.string   "user_font_color_style"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
