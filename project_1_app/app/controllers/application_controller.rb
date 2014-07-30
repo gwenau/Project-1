@@ -1,5 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  before_filter :ransack_search
+
+
+  def ransack_search
+    @q = User.search(params[:q])
+    @users = @q.result
+  end
 
   helper_method :current_user
 

@@ -2,11 +2,15 @@ class UsersController < ApplicationController
 
   before_filter :authenticate, only: [:edit, :destroy]
 
-    # @q = User.search(params[:q])
-    # @user = @q.result
+  # The def home method on the controller page ensures that you can access these variables on the page with the same name. It appears to be the purpose of having the controller layed out in this way.
+  def home 
+
+  end
 
   def index
-    @users = User.all
+    @q = User.search(params[:q])
+    @users = @q.result # The variable had to be the plural for this to work.
+    # @users = User.all
   end
 
   def show  
@@ -48,5 +52,7 @@ class UsersController < ApplicationController
   end
 
   # In the console, I can only find the entry using the user_id. 
+
+
 
 end
