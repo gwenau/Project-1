@@ -6,6 +6,16 @@
 <div class="home">
   <% @songs.each do |song| %>
     <%#= user_id. Undefined local variable at the moment. %>
+    <%= song.user.user_name %>
+    <br>
+    <%= link_to 'Show', song.user %>
+        <% if can? :edit, song.user %>
+          <%= link_to 'Edit', edit_user_path(user) %> 
+        <% end %>
+        <% if can? :delete, song.user%>
+          <%= link_to 'Destroy', song.user, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    <br>
     <%= song.song_name %>
     <br>
     <%= image_tag song.image.thumb %>
