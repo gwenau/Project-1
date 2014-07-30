@@ -1,5 +1,8 @@
 <h3><%= "List of Songs" %></h3>
-
+<div class="home">
+  <%= link_to 'Create', new_song_path %>
+</div>
+<br>
 <div class="home">
   <% @songs.each do |song| %>
     <%#= user_id. Undefined local variable at the moment. %>

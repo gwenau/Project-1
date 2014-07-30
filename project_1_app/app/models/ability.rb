@@ -7,6 +7,13 @@ class Ability
 
     if user.role? :admin
       can :manage, :all
+    elsif user.role? :moderator
+      can :read, :all
+      can :create, Comment 
+      can :delete, Comment do |comment| 
+            comment.user.id == user.id
+          end
+      can :delete, Comment
     elsif user.role? :artist
       can :read, :all
       can :update, User do |user_ability|
@@ -24,13 +31,6 @@ class Ability
       can :delete, Comment do |comment| 
             comment.try(:user) == user 
           end
-    elsif user.role? :moderator
-      can :read, :all
-      can :create, Comment 
-      can :delete, Comment do |comment| 
-            comment.user.id == user.id
-          end
-      can :delete, Comment
     else 
       can :read, :all
       can :create, Comment  
