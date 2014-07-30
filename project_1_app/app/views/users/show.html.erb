@@ -15,8 +15,8 @@
       <% @user.songs.each do |song| %>
         <%= song.song_name %><br>
         <%= image_tag song.image.thumb %>
-        <%= song.song_file %><br>
-        <%= link_to 'Show', song %>
+        <%#= song.song_file %><br>
+        <%= link_to 'Listen', song %>
         <% if can? :update, Song %>
           <%= link_to 'Edit', edit_song_path %>
         <% end %>
@@ -41,13 +41,16 @@
   
 </div>
 
+<button><%= link_to 'Back', users_path %></button>
+
 <!-- Need to add the coments for the songs here somehow. Where comment matches the songs that are playing. But taken out now because it will not need to be implemented until JavaScript comes along. -->
 <!-- <div class="bottom">
   <p>
     <strong>Comments:</strong><br>
-    <% @song.comments.each do |comment| %>
-      <%= comment.user_id %>
-      <%= comment.comment_content %><br>
-    <% end %>
+    <%# @song.comments.each do |comment| %>
+      <%#= comment.user_id %>
+      <%#= comment.comment_content %><br>
+    <%# end %>
   </p>
 </div> -->
+

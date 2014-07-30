@@ -8,6 +8,9 @@ class User < ActiveRecord::Base
 
   mount_uploader  :image, ImageUploader
 
+  validates :user_name, presence: true
+  validates :email, presence: :true, uniqueness: true, on: :create
+
   def role?(role)
     self.role.to_s == role.to_s
   end

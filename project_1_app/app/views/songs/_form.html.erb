@@ -1,21 +1,23 @@
 <!-- I have to put, = form_for, for it to show -->
-<%= form_for @song do |f| %>
-<!-- I've left out the error messages part here for now -->
-  <p>
-    <%= f.label :song_name %><br>
-    <%= f.text_field :song_name %>
-  </p>
-  <p>
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </p>
-  <p>
-    <%= f.label :song_file %><br>
-    <%= f.file_field :song_file %>
-  </p>
-  <p>
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :user_name %>
-  </p>
-  <%= f.submit %>
-<% end %>
+<div class="home">
+  <%= form_for @song do |f| %>
+  <!-- I've left out the error messages part here for now -->
+    <p>
+      <%= f.label :song_name %><br>
+      <%= f.text_field :song_name %>
+    </p>
+    <p>
+      <%= f.label :image %><br>
+      <%= f.file_field :image %>
+    </p>
+    <p>
+      <%= f.label :song_file %><br>
+      <%= f.file_field :song_file %>
+    </p>
+    <p>
+      <%= f.label :user_id, "Artist" %>
+      <%= f.collection_select :user_id, User.all, :id, :user_name %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>
