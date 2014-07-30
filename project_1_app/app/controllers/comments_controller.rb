@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
   def update 
     comment = Comment.find(params[:id])
     comment.update_attributes(params[:comment])
-    redirect_to(song_path) # Find out more if you can
+    redirect_to song_path(comment.song.id) # Find out more if you can
   end
 
   def destroy
