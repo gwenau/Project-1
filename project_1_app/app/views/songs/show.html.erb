@@ -22,7 +22,7 @@
     <br>
     <% @song.comments.each do |comment| %>
     <!-- Now have to find a way to make the user name show up. -->
-      <%= comment.user_id %>
+      <%= comment.user.user_name %>
       <%= comment.comment_content %>
       <br>
       <%= link_to 'Show', comment %>
