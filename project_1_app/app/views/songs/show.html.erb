@@ -3,7 +3,9 @@
 <div class="container user_background_<%= @song.user.user_background_style %>">
 
   <main>
-    <p><%= image_tag @song.image %></p>
+    <p>Artist: <%= @song.user.user_name %> </p>
+    <p><%= image_tag @song.image.portrait.url %></p>
+
   </main>
   <aside>
     <p><%= @song.song_file %></p>

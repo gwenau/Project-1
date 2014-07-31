@@ -8,20 +8,23 @@
     <%#= user_id. Undefined local variable at the moment. %>
     <%= song.user.user_name %>
     <br>
-    <%= link_to 'Show', song.user %>
-        <% if can? :edit, song.user %>
-          <%= link_to 'Edit', edit_user_path(user) %> 
-        <% end %>
-        <% if can? :delete, song.user%>
-          <%= link_to 'Destroy', song.user, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+    <%= link_to 'More', song.user %>
+    <% if can? :edit, song.user %>
+      <%= link_to 'Edit', edit_user_path(song.user) %> 
+    <% end %>
+    <% if can? :delete, song.user%>
+      <%= link_to 'Destroy', song.user, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
     <br>
     <%= song.song_name %>
     <br>
-    <%= image_tag song.image.thumb %>
+    <% if song.image.thumb %>
+      <%= image_tag song.image.thumb, width: 200 %>
+    <% else %>
+      default_image_thumb
+    <% end %>
     <br>
     <%#= song.song_file %>
-    <br>
     <%= link_to 'Listen', song %>
     <% if can? :edit, song %>
       <%= link_to 'Edit', edit_song_path(song) %> 

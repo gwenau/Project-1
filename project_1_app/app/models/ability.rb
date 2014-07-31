@@ -42,7 +42,6 @@ class Ability
       can :read, :all
       can :create, Comment  
       can [:update, :delete], Comment do |comment|
-        # I just want to get this part working.
             comment.try(:user) == user
           end
     end

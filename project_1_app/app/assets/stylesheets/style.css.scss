@@ -103,30 +103,29 @@ p {
 }
 
 .container {
-  color: black;
   width: 800px;
   /* Could be better written */
   margin-left: 70px;
   /* Find a better colour perhaps using the colour scheme */
-  background: #000000;
+  background: rgba(0,0,0,.6);
   /* The problem with opacity here is that it applies to both the text and the background color */
-  opacity: 0.6;
+
 }
 
 main {
-  width: 390px;
+  width: 395px;
   height: 500px;
   float: left;
-  background-color: #000000;
+  background-color: rgba(0,0,0,.6);
 }
 
 aside {
-  width: 400px;
+  width: 395px;
   height: 500px;
   float: left;
   margin-left: 5px;
   margin-bottom: 5px;
-  background-color: #000000;
+  background-color: rgba(0,0,0,.6);
 }
 
 .bottom {
