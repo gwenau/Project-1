@@ -15,6 +15,11 @@
     </audio>
     <br>
     <h5>Other songs by the same Artist</h5>
+    <% @song.user.songs.each do |other_song| %>
+      <%= other_song.song_name %> 
+      
+      <br>
+    <% end %>
   </aside>
 
 </div>
