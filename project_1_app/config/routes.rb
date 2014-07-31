@@ -14,8 +14,9 @@ Project1App::Application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :songs
-  resources :comments 
+  resources :songs do
+    resources :comments
+  end
 
   # May have to modify this users routes.
   resources :users

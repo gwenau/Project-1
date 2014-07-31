@@ -34,7 +34,7 @@
   <div class="comments">
     <p>
       <strong>Comments:</strong><br>
-      <button><%= link_to 'Create', new_comment_path %></button>
+      <button><%= link_to 'Create', new_song_comment_path(@song) %></button>
       <br>
       <% @song.comments.each do |comment| %>
       <!-- Now have to find a way to make the user name show up. -->
@@ -44,10 +44,10 @@
         <br>
         <% if can? :edit, comment %>
           <!-- Redirected back to specific song -->
-          <%= link_to 'Edit', edit_comment_path(comment.id) %>
+          <%= link_to 'Edit', edit_song_comment_path(@song, comment.id) %>
         <% end %>
         <% if can? :delete, comment %>
-          <%= link_to 'Destroy', comment, method: :delete, data: {confirm: 'Are you sure?' } %>
+          <%#= link_to 'Destroy', song_comment(@song, comment.id), method: :delete, data: {confirm: 'Are you sure?' } %>
         <% end %>
         <br>
       <% end %>

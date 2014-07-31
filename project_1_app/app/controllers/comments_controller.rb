@@ -11,12 +11,23 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    @song = Song.find(params[:song_id])
+    @comment = @song.comments.build
   end
 
   def create
-    @comment = current_user.comments.create(params[:comment])
-    redirect_to song_path(@comment.song.id)
+    @song = Song.find(params[:song_id])
+    @comment = @song.comments.build(params[:comment])
+   
+    @comment.user_id = current_user.id
+    @comment.save
+      redirect_to song_path(@song)
+
+    # @comment = current_user.comments.create(params[:comment])
+    # @comment.user_id = current_user.id
+    # @comment.song_id = song.id
+    # @comment.save
+    # redirect_to song_path(@comment.song.id)
   end
 
   def edit
@@ -25,6 +36,8 @@ class CommentsController < ApplicationController
 
   def update 
     comment = Comment.find(params[:id])
+    comment.user_id = current_user.id
+    comment.save
     comment.update_attributes(params[:comment])
     redirect_to song_path(comment.song.id) 
   end
