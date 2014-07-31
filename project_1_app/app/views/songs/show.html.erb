@@ -53,11 +53,10 @@
         <%= comment.comment_content %>
         <br>
         <% if can? :edit, comment %>
-          <!-- Redirected back to specific song -->
           <%= link_to 'Edit', edit_song_comment_path(@song, comment.id) %>
         <% end %>
         <% if can? :delete, comment %>
-          <%#= link_to 'Destroy', song_comment(@song, comment.id), method: :delete, data: {confirm: 'Are you sure?' } %>
+          <%= link_to 'Destroy', song_comment_path(@song, comment.id), method: :delete, data: {confirm: 'Are you sure?' } %>
         <% end %>
         <br>
       <% end %>
