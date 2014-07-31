@@ -18,7 +18,6 @@ class CommentsController < ApplicationController
   def create
     @song = Song.find(params[:song_id])
     @comment = @song.comments.build(params[:comment])
-   
     @comment.user_id = current_user.id
     @comment.save
       redirect_to song_path(@song)
