@@ -28,7 +28,9 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params[:user])
     if @user.save
-      redirect_to(@user)
+      session[:user_id] = @user.id
+      # The brackets around the @user below made a world of difference just for the notice to show up. 
+      redirect_to edit_user_path(@user), notice: "logged in!"
     else
       render 'new'
     end
