@@ -39,10 +39,7 @@
   <%= form_for ([@song, @comment]) do |f| %>
     <p>
       <%= f.label :comment_content %>
-      <%= f.text_area :comment_content %>
-      <br>
-      <%#= f.label :song_id %>
-      <%#= f.collection_select :song_id, Song.all, :id, :song_name %>
+      <%= f.text_area :comment_content, :size=>"100*1" %>
     </p>
     <%= f.submit %>
   <% end %>
