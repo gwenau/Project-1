@@ -88,6 +88,18 @@ h3 {
   -webkit-margin-after: 0px;
 }
 
+h4 {
+ font-size: 30px; 
+ text-align: center;
+ margin: 0;
+}
+
+h5 {
+  color: #FFDEAD;
+  margin: 0;
+  font-size: 20px;
+}
+
 p {
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
@@ -104,12 +116,8 @@ p {
 
 .container {
   width: 800px;
-  /* Could be better written */
   margin-left: 70px;
-  /* Find a better colour perhaps using the colour scheme */
   background: rgba(0,0,0,.6);
-  /* The problem with opacity here is that it applies to both the text and the background color */
-
 }
 
 main {
@@ -136,6 +144,11 @@ aside {
   /* Need a better colour */
   background-color: #000000;
   opacity: 0.6;
+}
+
+.comments {
+  color: #A0522D;
+  opacity: 1;
 }
 
 .session_acknowledgement {

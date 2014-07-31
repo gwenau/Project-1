@@ -1,6 +1,6 @@
 <h3><%= "List of Songs" %></h3>
 <div class="home">
-  <%= link_to 'Create', new_song_path %>
+  <button><%= link_to 'Create', new_song_path %></button>
 </div>
 <br>
 <div class="home">
@@ -18,11 +18,11 @@
     <br>
     <%= song.song_name %>
     <br>
-    <% if song.image.thumb %>
+    <%# if song.image.thumb %>
       <%= image_tag song.image.thumb, width: 200 %>
-    <% else %>
-      default_image_thumb
-    <% end %>
+    <%# else %>
+
+    <%# end %>
     <br>
     <%#= song.song_file %>
     <%= link_to 'Listen', song %>
