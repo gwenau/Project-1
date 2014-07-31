@@ -9,7 +9,7 @@ ARTIST: Must sign in to
 Song
 -create 
 -edit
--delete
+-delete - Still need to test this one. 
 
 Comment
 - create

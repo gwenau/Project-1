@@ -16,6 +16,8 @@ class SongsController < ApplicationController
 
   def create
     @song = Song.create(params[:song])
+    @song.user_id = current_user.id
+    @song.save
     redirect_to(songs_path)
   end
 

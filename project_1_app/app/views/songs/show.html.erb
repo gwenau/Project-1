@@ -42,7 +42,6 @@
         <br>
         <%= comment.comment_content %>
         <br>
-        <%= link_to 'Show', comment %>
         <% if can? :edit, comment %>
           <!-- Redirected back to specific song -->
           <%= link_to 'Edit', edit_comment_path(comment.id) %>

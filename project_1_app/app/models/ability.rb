@@ -27,7 +27,7 @@ class Ability
       end
       can :create, Song
       can :update, Song do |song|
-            song.user.id == user.id 
+            song.user_id == user.id 
             end
       # This seems to be working as well.
       can :delete, Song do |song|

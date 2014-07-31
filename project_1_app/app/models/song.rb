@@ -1,6 +1,6 @@
 class Song < ActiveRecord::Base
   
-  before_create :save_user  
+  # before_create :save_user  
 
   attr_accessible :song_name, :song_file, :user_id, :image
 
@@ -11,8 +11,8 @@ class Song < ActiveRecord::Base
   mount_uploader :song_file, SongUploader
 
   # This appears to have worked!!!
-  def save_user
-    self.user_id = user_id
-  end
+  # def save_user
+  #   self.user_id = current_user.id
+  # end
   
 end

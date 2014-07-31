@@ -48,6 +48,11 @@
       <%= link_to 'Edit Profile', edit_user_path %>
     </button>
   <% end %>
+  <% if can? :new, @user %>
+    <button>
+      <%= link_to 'Create Song', new_song_path %>
+    </button>
+  <% end %>
 </div>
 
 <!-- Need to add the coments for the songs here somehow. Where comment matches the songs that are playing. But taken out now because it will not need to be implemented until JavaScript comes along. -->
