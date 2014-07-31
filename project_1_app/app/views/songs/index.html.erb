@@ -1,16 +1,19 @@
 <h3><%= "List of Songs" %></h3>
-<div class="home">
-  <button><%= link_to 'Create', new_song_path %></button>Create New Song
-</div>
+
+<% if can? :create, Song %>
+  <div class="home">
+    <button><%= link_to 'Create', new_song_path %></button>Create New Song
+  </div>
+<% end %>
+
 <br>
 <div class="home">
     <% @songs.each do |song| %>
-    <%#= user_id. Undefined local variable at the moment. %>
     <%= song.user.user_name %>
     <br>
     <%= link_to 'More', song.user %>
     <% if can? :edit, song.user %>
-      <%= link_to 'Edit', edit_user_path(song.user) %> 
+      <%= link_to 'Edit', edit_user_path(song) %> 
     <% end %>
     <% if can? :delete, song.user%>
       <%= link_to 'Destroy', song.user, method: :delete, data: { confirm: 'Are you sure?' } %>
