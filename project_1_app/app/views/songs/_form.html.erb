@@ -15,8 +15,8 @@
       <%= f.file_field :song_file %>
     </p>
     <p>
-      <%= f.label :user_id, "Artist" %>
-      <%= f.collection_select :user_id, User.all, :id, :user_name %>
+      <%#= f.label :user_id, "Artist" %>
+      <%#= f.collection_select :user_id, User.all, :id, :user_name %>
     </p>
     <%= f.submit %>
   <% end %>

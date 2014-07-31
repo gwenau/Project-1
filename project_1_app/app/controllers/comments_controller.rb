@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :authenticate, only: [:create, :edit, :destroy]
+  before_filter :authenticate, only: [:new, :edit, :destroy]
 
   def index
     @comments = Comment.all
@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.create(params[:comment])
+    @comment = current_user.comments.create(params[:comment])
     redirect_to song_path(@comment.song.id)
   end
 

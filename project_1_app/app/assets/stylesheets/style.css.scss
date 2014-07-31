@@ -100,6 +100,12 @@ h5 {
   font-size: 20px;
 }
 
+h6 {
+  color: #FFDEAD;
+  margin: 0;
+  font-size: 14px;
+}
+
 p {
   -webkit-margin-before: 0px;
   -webkit-margin-after: 0px;
@@ -122,14 +128,14 @@ p {
 
 main {
   width: 395px;
-  height: 500px;
+  min-height: 500px;
   float: left;
   background-color: rgba(0,0,0,.6);
 }
 
 aside {
   width: 395px;
-  height: 500px;
+  min-height: 500px;
   float: left;
   margin-left: 5px;
   margin-bottom: 5px;

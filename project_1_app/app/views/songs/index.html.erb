@@ -1,10 +1,10 @@
 <h3><%= "List of Songs" %></h3>
 <div class="home">
-  <button><%= link_to 'Create', new_song_path %></button>
+  <button><%= link_to 'Create', new_song_path %></button>Create New Song
 </div>
 <br>
 <div class="home">
-  <% @songs.each do |song| %>
+    <% @songs.each do |song| %>
     <%#= user_id. Undefined local variable at the moment. %>
     <%= song.user.user_name %>
     <br>

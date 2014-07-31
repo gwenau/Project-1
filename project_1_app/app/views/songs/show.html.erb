@@ -17,7 +17,13 @@
     <h5>Other songs by the same Artist</h5>
     <% @song.user.songs.each do |other_song| %>
       <%= other_song.song_name %> 
-      
+      <%= link_to 'Listen', other_song %>
+      <% if can? :edit, other_song %>
+        <%= link_to 'Edit', edit_song_path(other_song) %>
+      <% end %>
+      <% if can? :delete, other_song %>
+        <%= link_to 'Destroy', other_song, method: :end, data: { confirm: 'Are you sure?'} %>
+      <% end %>
       <br>
     <% end %>
   </aside>
@@ -33,6 +39,7 @@
       <% @song.comments.each do |comment| %>
       <!-- Now have to find a way to make the user name show up. -->
         <%= comment.user.user_name %>
+        <br>
         <%= comment.comment_content %>
         <br>
         <%= link_to 'Show', comment %>

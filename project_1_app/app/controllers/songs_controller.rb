@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
 
-  before_filter :authenticate, only: [:edit, :destroy]
+  before_filter :authenticate, only: [:new, :edit, :destroy]
 
   def index
 
