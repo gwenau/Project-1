@@ -34,6 +34,9 @@ class Ability
             song.try(:user) == user
             end
       can :create, Comment 
+      can :update, Comment do |comment| 
+            comment.user == user
+          end
       can :delete, Comment do |comment| 
             # comment.user.id == user.id
             comment.song.user.id = user.id

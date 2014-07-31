@@ -5,7 +5,9 @@
   <main>
     <h4><%= @song.user.user_name %></h4>
     <p><%= image_tag @song.image.portrait.url, width: 395 %></p>
-
+    <%# if can? :edit, User %>
+      <%# edit_user_path(@song.user) %>
+    <%# end %>
   </main>
   <aside>
     <h5><%= @song.song_name %></h5>
@@ -26,6 +28,9 @@
       <% end %>
       <br>
     <% end %>
+    <% if can? :create, Song %>
+      <button><%= link_to 'Add Song', new_song_path %></button>
+    <% end %> 
   </aside>
 
 </div>
