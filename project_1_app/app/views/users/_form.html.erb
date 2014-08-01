@@ -18,11 +18,11 @@
     </p>
     <p>
       <%= f.label :user_background_style %>
-      <%= f.select :user_background_style, options_for_select([:red, :green, :grey, :black, :white, :blue]) %>
+      <%= f.select :user_background_style, options_for_select([:default, :red, :green, :grey, :black, :white, :blue]) %>
     </p>
     <p>
       <%= f.label :user_font_color_style %>
-      <%= f.select  :user_font_color_style, options_for_select([:red, :green, :gray, :black, :white, :blue]) %>
+      <%= f.select  :user_font_color_style, options_for_select([:default, :red, :green, :gray, :black, :white, :blue]) %>
     </p>
     <%= f.submit %>
   <% end %>

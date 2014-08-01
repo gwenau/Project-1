@@ -146,8 +146,7 @@ aside {
   margin-left: 70px;
  /* margin-top: 5px; Doesn't seem to work*/
   /* Need a better colour */
-  background-color: #000000;
-  opacity: 0.6;
+  background-color: rgba(0,0,0,.6);
 }
 
 .comments {
@@ -170,6 +169,10 @@ aside {
 }*/
 
 /* The only way that you can apply opacity is to use it on the colour itself. It's not good applying the opacity to the whole region because it affects the text and the images */
+.user_background_default>main {
+  background: rgba(0,0,0,.6);
+}
+
 .user_background_red>main {
   background: red;
 }
@@ -192,6 +195,10 @@ aside {
 
 .user_background_blue>main {
   background: blue;
+}
+
+.user_background_default>aside {
+  background: rgba(0,0,0,.6);
 }
 
 .user_background_red>aside {

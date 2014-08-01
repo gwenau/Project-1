@@ -43,6 +43,9 @@ class Ability
           end
     else 
       can :read, :all
+      can :update, User do |user_ability|
+        user_ability.id == user.id
+      end
       can :create, Comment  
       can [:update, :delete], Comment do |comment|
             comment.try(:user) == user
